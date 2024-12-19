@@ -1,0 +1,5 @@
+#add virtual env to gitignore
+venv/
+.env
+
+
