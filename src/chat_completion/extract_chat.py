@@ -2,12 +2,9 @@
 from src.config.config import get_settings
 from langdetect import detect
 from openai import OpenAI
-import openai
-
-client = OpenAI()
-
 settings = get_settings()
-openai.api_key = settings.API_key
+client = OpenAI(api_key=settings.API_key)
+
 
 
 
