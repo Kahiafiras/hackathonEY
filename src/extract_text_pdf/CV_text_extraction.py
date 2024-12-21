@@ -57,8 +57,9 @@ def process_pdf_files_in_folder(folder_path):
     # Iterate through all files in the folder
     for file_name in os.listdir(folder_path):
         ext = os.path.splitext(file_name)[1]
+        file_name=os.path.splitext(file_name)[0]
         if ext == ".pdf":  # Check if the file has a .pdf extension
-            file_path = os.path.join(folder_path, file_name)
+            file_path = os.path.join(folder_path, f"{file_name}{ext}")
             print(f"Processing file: {file_path}")
             
             # Apply the processing function and collect the result
