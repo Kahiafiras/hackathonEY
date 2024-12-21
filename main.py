@@ -1,5 +1,5 @@
 from src.config.config import get_settings
-from CV_text_extraction import convert_pdf_to_markdown
+from src.extract_text_pdf.CV_text_extraction import convert_pdf_to_markdown
 
 settings = get_settings()
 
