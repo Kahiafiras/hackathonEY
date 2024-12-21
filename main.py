@@ -5,8 +5,8 @@ settings = get_settings()
 
 if __name__ == "__main__":
     # Input PDF file path
-    pdf_path = r"C:\Users\aymen\Downloads\CV SIRINE AZIZI stage.pdf"
+    pdf_path = r"C:\Users\DEV 1\Desktop\Ahmed-Ben-Jannet-Resume.pdf"
     # Output Markdown file path
-    output_file = "./output/CVsyrine.txt"
+    output_file = "./output/CVbouhmid.txt"
 
     convert_pdf_to_markdown(pdf_path, output_file)
