@@ -1,16 +1,19 @@
 import nest_asyncio
 import os
 from llama_parse import LlamaParse
+from src.config.config import get_settings
 
-def convert_pdf_to_markdown(pdf_path, output_file):
+
+settings = get_settings()
+def convert_pdf_to_markdown(pdf_path:str, output_file:str):
     """Converts a PDF file to Markdown format and saves it to a file."""
     nest_asyncio.apply()
 
     # Set API key for Llama Cloud
-    os.environ["LLAMA_CLOUD_API_KEY"] = "llx-Oy4ATtyYWE4Bt8HmEBRKGCQ0sPil98mxtATX4vbz4iAcmhIw"
+    api_key = settings.LLAMA_CLOUD_API
 
     # Load and process the document
-    document = LlamaParse(result_type="markdown").load_data(pdf_path)
+    document = LlamaParse(result_type="markdown",api_key=api_key).load_data(pdf_path)
 
     # Write the output to a file
     with open(output_file, 'w') as file:

@@ -6,6 +6,7 @@ from pydantic_settings import BaseSettings
 class Settings(BaseSettings):
     """Class to call all configs"""
     API_key: str
+    LLAMA_CLOUD_API:str
   
 @lru_cache()
 def get_settings():
