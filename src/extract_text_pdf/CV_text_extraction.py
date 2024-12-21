@@ -16,7 +16,7 @@ def convert_pdf_to_markdown(pdf_path:str, output_file:str):
     document = LlamaParse(result_type="markdown",api_key=api_key).load_data(pdf_path)
 
     # Write the output to a file
-    with open(output_file, 'w') as file:
+    with open(output_file, 'w',encoding="utf-8") as file:
         for doc in document:
             file.write(doc.text)
     print(f"Markdown content saved to {output_file}")

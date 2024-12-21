@@ -1,5 +1,7 @@
 #add virtual env to gitignore
 venv/
 .env
+__pycache__/
+output/
 
 
