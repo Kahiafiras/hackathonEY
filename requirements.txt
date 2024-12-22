@@ -3,3 +3,4 @@ nest-asyncio==1.6.0
 llama-parse==0.5.18
 langdetect==1.0.9
 openai==1.58.1
+streamlit-folium==0.24.0
