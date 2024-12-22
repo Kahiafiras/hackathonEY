@@ -22,12 +22,19 @@ def extract_cv_details(cv_text):
         1. A list of key skills mentioned in the CV.
         2. The seniority level (e.g., Junior, Mid-level, Senior, or similar).
         3. The total years of professional experience based on the text.
+        4. Suggest job titles based on the CV and estimate the level for each suggested job (e.g., Junior Data Scientist, Mid-level Data Analyst, etc.).
+        5. A brief 2-3 sentence comment summarizing the profile, highlighting key strengths and professional focus.
 
         Please output the result in JSON format as follows:
         {{
             "skills": ["Skill1", "Skill2", ...],
             "seniority": "Seniority Level",
-            "years_of_experience": TotalYears
+            "years_of_experience": TotalYears,
+            "suggested_jobs": [
+                {{ "job_title": "Job Title 1", "estimated_level": "Junior" }},
+                {{ "job_title": "Job Title 2", "estimated_level": "Mid-level" }}
+            ],
+            "profile_summary": "Brief 2-3 sentence summary of the profile"
         }}
 
         Here is the CV text:
@@ -40,12 +47,19 @@ def extract_cv_details(cv_text):
         1. Une liste des compétences clés mentionnées dans le CV.
         2. Le niveau de séniorité (par exemple, Junior, Intermédiaire, Senior ou équivalent).
         3. Le total des années d'expérience professionnelle basé sur le texte.
+        4. Suggérer des titres de poste basés sur le CV et estimer le niveau pour chaque poste suggéré (par exemple, Junior Data Scientist, Analyste Data Intermédiaire, etc.).
+        5. Un commentaire bref de 2 à 3 phrases résumant le profil, mettant en valeur les points forts et l'orientation professionnelle.
 
         Veuillez donner le résultat au format JSON comme suit :
         {{
             "competences": ["Compétence1", "Compétence2", ...],
             "niveau_de_seniorite": "Niveau de Séniorité",
-            "annees_d_experience": TotalAnnées
+            "annees_d_experience": TotalAnnées,
+            "postes_suggérés": [
+                {{ "titre_poste": "Poste 1", "niveau_estime": "Junior" }},
+                {{ "titre_poste": "Poste 2", "niveau_estime": "Intermédiaire" }}
+            ],
+            "resume_profil": "Commentaire bref de 2-3 phrases résumant le profil"
         }}
 
         Voici le texte du CV :
