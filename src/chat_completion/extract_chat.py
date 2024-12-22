@@ -1,4 +1,3 @@
-
 from src.config.config import get_settings
 from langdetect import detect
 from openai import OpenAI
@@ -6,17 +5,16 @@ settings = get_settings()
 client = OpenAI(api_key=settings.API_key)
 
 
-
-
 def detect_language(text):
     try:
         return detect(text)
     except:
-        return "unknown" 
+        return "unknown"
+
 
 def extract_cv_details(cv_text):
     lang = detect_language(cv_text)
-    
+
     if lang == "en":
         prompt = f"""
         You are an expert recruiter helping to analyze CVs written in English. Your task is to extract specific information from a CV provided as text. Please return:
@@ -57,7 +55,7 @@ def extract_cv_details(cv_text):
         return {"error": "Language not supported or not detected."}
 
     response = client.chat.completions.create(
-        model="gpt-4",
+        model="gpt-4o",
         messages=[{"role": "user", "content": prompt}]
     )
     return response.choices[0].message.content
